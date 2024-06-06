@@ -6,12 +6,29 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 150px;
+  width: 80px;
   background-color: #333;
   color: #fff;
   padding-top: 20px;
   z-index: 100;
   transition: 0.5s;
+
+  .logo {
+    img {
+      width: 50px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      bottom: 0;
+    }
+
+    .svg-container {
+      stroke: #1aafbc;
+      stroke-width: 15px;
+    }
+  }
 
   &.close {
     width: 0;
@@ -30,6 +47,9 @@
     ul {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-inline-start: 0;
       list-style: none;
       gap: 10px;
 
