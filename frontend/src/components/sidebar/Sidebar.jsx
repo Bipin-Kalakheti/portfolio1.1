@@ -1,21 +1,33 @@
-import "./sidebar.scss";
-import Logos from "../../assets/images/logo-s.png";
-import LogoSubtitle from "../../assets/images/logo_subB.png";
-import { useRef } from "react";
-import { useEffect } from "react";
-import DrawSVGPlugin from "gsap-trial/DrawSVGPlugin";
-import gsap from "gsap-trial";
+import './sidebar.scss'
+import Logos from '../../assets/images/logo-s.png'
+import LogoSubtitle from '../../assets/images/logo_subB.png'
+import { useRef, useState } from 'react'
+import { useEffect } from 'react'
+import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin'
+import gsap from 'gsap-trial'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faHome,
+  faUser,
+  faEnvelope,
+  faSuitcase,
+  faBars,
+  faClose,
+} from '@fortawesome/free-solid-svg-icons'
+import { Link, NavLink } from 'react-router-dom'
 
 const Sidebar = () => {
-  const bgRef = useRef();
-  const outlineLogoRef = useRef();
-  const solidLogoRef = useRef();
-  const didAnimate = useRef(false); // Add this useRef to track if animation has already run
+  const [showNav, setShowNav] = useState(false)
+
+  const bgRef = useRef()
+  const outlineLogoRef = useRef()
+  const solidLogoRef = useRef()
+  const didAnimate = useRef(false) // Add this useRef to track if animation has already run
 
   useEffect(() => {
-    if (didAnimate.current) return; // Check if animation has run before, if yes, do nothing
-    didAnimate.current = true;
-    gsap.registerPlugin(DrawSVGPlugin);
+    if (didAnimate.current) return // Check if animation has run before, if yes, do nothing
+    didAnimate.current = true
+    gsap.registerPlugin(DrawSVGPlugin)
 
     gsap
       .timeline()
@@ -26,7 +38,7 @@ const Sidebar = () => {
       .from(outlineLogoRef.current, {
         drawSVG: 0,
         duration: 15,
-      });
+      })
     gsap.fromTo(
       solidLogoRef.current,
       {
@@ -37,8 +49,8 @@ const Sidebar = () => {
         delay: 2,
         duration: 4,
       }
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <div className="sidebar">
@@ -66,22 +78,40 @@ const Sidebar = () => {
         </svg>
         <img className="sub-logo" src={LogoSubtitle} alt="Bipin" />
       </div>
-      <div className="nav-links">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About me</a>
-          </li>
-          <li>
-            <a href="">Projects</a>
-          </li>
-          <li>
-            <a href="">Contact Me</a>
-          </li>
-        </ul>
-      </div>
+      <nav>
+        <NavLink
+          to="/"
+          exact="true"
+          activeclassname="active"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="about-link"
+          to="/about"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="portfolio-link"
+          to="/portfolio"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="contact-link"
+          to="/contact"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+        </NavLink>
+      </nav>
       <div className="social-links">
         <ul>
           <li>Facebook</li>
@@ -90,7 +120,7 @@ const Sidebar = () => {
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
