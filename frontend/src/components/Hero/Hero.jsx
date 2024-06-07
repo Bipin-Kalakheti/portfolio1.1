@@ -55,7 +55,7 @@ function Hero() {
             <img src={linkedinIcon} alt="linkedin Icon" />
           </a>
         </span>
-        <p>
+        <p className="description">
           With a passion for developing modern web apps for commercial
           businesses.
         </p>
