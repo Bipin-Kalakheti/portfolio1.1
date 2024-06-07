@@ -1,13 +1,16 @@
-import { useState } from "react";
-import "./App.css";
-import Sidebar from "./components/sidebar/Sidebar.jsx";
+import { useState } from 'react'
+import './App.css'
+import Sidebar from './components/sidebar/Sidebar.jsx'
+import Hero from './components/Hero/Hero.jsx'
+
 
 function App() {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <Hero />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
