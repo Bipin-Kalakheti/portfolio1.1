@@ -77,3 +77,22 @@
   flex-direction: column;
   gap: 20px;
 }
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+
+@media (width >= 800px) {
+  .section-container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .heroImg {
+      max-width: 350px;
+      width: 350px;
+    }
+  }
+}

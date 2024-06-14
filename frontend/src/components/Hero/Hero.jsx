@@ -1,5 +1,5 @@
 import './hero.css'
-import heroImg from '../../assets/images/logo-s.png'
+import heroImg from '../../assets/images/hero-img.png'
 import sun from '../../assets/images/sun.svg'
 import moon from '../../assets/images/moon.svg'
 import twitterDark from '../../assets/images/twitter-dark.svg'
@@ -40,21 +40,23 @@ function Hero() {
           Kalakheti
         </h1>
         <h2>Frontend Developer</h2>
-        <span>
-          <a href="https://twitter.com" target="_blank">
-            <img src={twitterIcon} alt="Twitter Icon" />
-          </a>
-        </span>
-        <span>
-          <a href="https://github.com" target="_blank">
-            <img src={githubIcon} alt="github Icon" />
-          </a>
-        </span>
-        <span>
-          <a href="https://linkedin.com" target="_blank">
-            <img src={linkedinIcon} alt="linkedin Icon" />
-          </a>
-        </span>
+        <div className="socialLinks">
+          <span>
+            <a href="https://twitter.com" target="_blank">
+              <img src={twitterIcon} alt="Twitter Icon" />
+            </a>
+          </span>
+          <span>
+            <a href="https://github.com" target="_blank">
+              <img src={githubIcon} alt="github Icon" />
+            </a>
+          </span>
+          <span>
+            <a href="https://linkedin.com" target="_blank">
+              <img src={linkedinIcon} alt="linkedin Icon" />
+            </a>
+          </span>
+        </div>
         <p className="description">
           With a passion for developing modern web apps for commercial
           businesses.
