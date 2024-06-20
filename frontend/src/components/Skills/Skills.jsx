@@ -28,7 +28,7 @@ const Skills = () => {
   }, [])
 
   return (
-    <div className="skills">
+    <div className="skills" id='Skills'>
       <div className="titleSection">
         <h1>Skills</h1>
       </div>

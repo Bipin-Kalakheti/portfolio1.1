@@ -4,7 +4,7 @@ import ChatApp from '../../assets/images/fitlift.png'
 
 function Projects() {
   return (
-    <section id="projects" className="container">
+    <section id="Projects" className="container">
       <h1 className="sectionTitle">Projects</h1>
       <div className="projectsContainer">
         <ProjectCard

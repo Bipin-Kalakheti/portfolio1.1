@@ -1,62 +1,175 @@
-.inputbox {
-  position: relative;
-  width: 196px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.inputbox input {
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputBox {
   position: relative;
-  width: 100%;
-  padding: 20px 10px 10px;
-  background: transparent;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  width: 250px;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: none;
+    border-radius: 5px;
+    outline: none;
+    color: #111;
+    font-size: 16px;
+    transition: 0.5s;
+
+    &:valid ~ span,
+    &:focus ~ span {
+      color: #00dfc4;
+      transform: translateX(10px) translateY(-7px);
+      font-size: 0.65em;
+      padding: 0 10px;
+      border-left: 1px solid #00dfc4;
+      border-right: 1px solid #00dfc4;
+      letter-spacing: 0.2em;
+      background: #222;
+    }
+
+    &:valid:focus ~ span {
+      background: #00dfc4;
+      color: #1d2b3a;
+      border-radius: 2px;
+    }
+
+    &:valid,
+    &:focus {
+      border-color: #00dfc4;
+    }
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(232, 212, 212, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+
+  textarea {
+    height: 100px;
+  }
+}
+
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
   border: none;
-  color: #23242a;
-  font-size: 1em;
-  letter-spacing: 0.05em;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  z-index: 10;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  padding: 0;
+  width: 150px;
 }
 
-.inputbox span {
-  position: absolute;
-  left: 0;
-  padding: 10px 10px 10px;
-  font-size: 1em;
-  color: #8f8f8f;
-  letter-spacing: 00.05em;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  pointer-events: none;
- 
+.button_top {
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
 }
 
-.inputbox input:valid ~ span,
-.inputbox input:focus ~ span {
-  color: #45f3ff;
-  -webkit-transform: translateX(-10px) translateY(-34px);
-  -ms-transform: translateX(-10px) translateY(-34px);
-  transform: translateX(-10px) translateY(-34px);
-  font-size: 0, 75em;
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
 }
 
-.inputbox i {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: #45f3ff;
-  border-radius: 4px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  pointer-events: none;
-  z-index: 9;
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
 }
 
-.inputbox input:valid ~ i,
-.inputbox input:focus ~ i {
-  height: 44px;
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button span {
+  display: flex;
+  justify-content: space-evenly;
+
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+
+  p {
+    color: black;
+    font-size: 1em;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+button:hover {
+  .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+
+  &:active {
+    svg {
+      transform: translateX(6.2em) rotate(45deg) scale(1.1);
+    }
+  }
+
+  span P {
+    transform: translateX(5em);
+  }
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
 }

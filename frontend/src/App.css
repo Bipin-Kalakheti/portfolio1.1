@@ -19,6 +19,12 @@
   --footer-text-color: #bbb;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--background-color);
   background-image: url('./assets/images/background-dark.png');
