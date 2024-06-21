@@ -41,6 +41,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  svg {
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+    fill: gray !important;
+    stroke: #000000;
+  }
 }
 
 @keyframes scroll {

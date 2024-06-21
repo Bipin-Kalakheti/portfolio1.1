@@ -30,26 +30,25 @@
     align-self: center;
   }
 
-  button {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  .resumeButton {
+    --font-color: #323232;
+    --bg-color: #fff;
+    --main-color: #323232;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
   }
 
-  button:hover {
-    transform: scale(1.1);
-  }
-
-  button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  .resumeButton:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
   }
 }
 
@@ -57,9 +56,28 @@
   position: relative;
 }
 
-.colorMode {
+.theme {
+  --bg-color: #fff;
+  --main-color: #323232;
   position: absolute;
+  top: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--bg-color);
+  border-radius: 100%;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}
+.theme:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+.colorMode {
   width: 25px;
 }
 

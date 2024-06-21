@@ -27,12 +27,16 @@ function Hero() {
           alt="Profile Picture of Bipin Kalakheti"
           className="heroImg"
         />
+        
+        
+        <div className="theme">
         <img
-          src={themeIcon}
-          className="colorMode"
-          alt="Color mode icon"
-          onClick={toggleTheme}
-        />
+            src={themeIcon}
+            className="colorMode"
+            alt="Color mode icon"
+            onClick={toggleTheme}
+          />
+        </div>
       </div>
       <div className="info">
         <h1>
@@ -62,7 +66,7 @@ function Hero() {
           businesses.
         </p>
         <a href={Resume} download>
-          <button className="hover">Resume</button>
+          <button className="resumeButton">Resume</button>
         </a>
       </div>
     </section>

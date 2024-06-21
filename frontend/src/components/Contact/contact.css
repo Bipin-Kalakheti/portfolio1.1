@@ -39,15 +39,23 @@ form {
 
   input,
   textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: none;
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    width: 250px;
+    height: 40px;
     border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
     outline: none;
-    color: #111;
-    font-size: 16px;
-    transition: 0.5s;
 
     &:valid ~ span,
     &:focus ~ span {
@@ -79,7 +87,7 @@ form {
     padding: 10px;
     pointer-events: none;
     font-size: 1em;
-    color: rgba(232, 212, 212, 0.25);
+    color: rgba(12, 12, 12, 0.25);
     text-transform: uppercase;
     transition: 0.5s;
   }
