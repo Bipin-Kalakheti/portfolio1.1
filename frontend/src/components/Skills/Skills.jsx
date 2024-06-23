@@ -6,6 +6,7 @@ import Css from '../Icons/Css'
 import Tailwind from '../Icons/Tailwind'
 import Wordpress from '../Icons/Wordpress'
 import Python from '../Icons/Python'
+import Firebase from '../Icons/Firebase'
 
 const Skills = () => {
   const scrollers = document.querySelectorAll('.scroller')
@@ -54,6 +55,12 @@ const Skills = () => {
           </div>
           <div>
             <Tailwind />
+          </div>
+          <div>
+            <Wordpress />
+          </div>
+          <div>
+            <Firebase />
           </div>
           <div>
             <Wordpress />
