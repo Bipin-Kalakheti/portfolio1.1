@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react'
 export default function Hero() {
   const { theme, toggleTheme } = useTheme()
 
-  const [color, setColor] = useState('#fff')
+  const [color, setColor] = useState('#e8e8e8')
 
   const themeIcon = theme === 'light' ? sun : moon
   const twitterIcon = theme === 'light' ? twitterLight : twitterDark
@@ -28,7 +28,7 @@ export default function Hero() {
   }, [color])
   return (
     <section id="hero" className="section-container">
-      <div className="colorModeContainer block">
+      <div className="colorModeContainer fixblock">
         <img
           src={heroImg}
           alt="Profile Picture of Bipin Kalakheti"
@@ -43,7 +43,6 @@ export default function Hero() {
             onClick={toggleTheme}
           />
         </div>
-        
       </div>
       <div className="info">
         <h1>

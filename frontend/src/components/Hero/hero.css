@@ -1,5 +1,4 @@
 .section-container {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +9,12 @@
 
   .heroImg {
     max-width: 200px;
+    transition-delay: 0.4s;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(2px 2px 20px #1818188a);
+    }
   }
 
   span {
@@ -32,13 +37,12 @@
   }
 
   .resumeButton {
-    
     width: 120px;
     height: 40px;
-   
+
     font-size: 17px;
     font-weight: 600;
-    
+
     cursor: pointer;
   }
 
@@ -67,7 +71,6 @@
 .colorModeContainer {
   position: relative;
   height: 60%;
-  
 }
 
 .theme {
@@ -79,7 +82,6 @@
   align-items: center;
   width: 50px;
   height: 50px;
-  
 }
 .theme:active {
   box-shadow: 0px 0px var(--main-color);

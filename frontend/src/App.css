@@ -8,8 +8,8 @@
   --form-text-color: #555;
   --footer-text-color: #888;
   --main-color: #85807a;
-  --secondary-color: #bbe2d7;
-  --border-color: #000000;
+  --secondary-color: #f5f5f5;
+  --border-color: #c3c6ce;
 }
 
 [data-theme='dark'] {
@@ -91,10 +91,26 @@ p {
 .block {
   border-radius: 7px;
   border: 2px solid var(--border-color);
-  box-shadow: 6px 6px var(--main-color);
+  box-shadow: -0.4rem 0.4rem var(--main-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
+
+
+  
+}
+
+.fixblock {
+  border-radius: 7px;
+  border: 2px solid var(--border-color);
   background-color: var(--secondary-color);
   color: var(--text-color);
   transition: 0.2s ease-in;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: -0.2rem 0.2rem var(--main-color);
+  }
 }
 
 .block-active {
@@ -104,6 +120,7 @@ p {
 }
 .block-focus {
   &:focus {
+    transform: translate(-5px, 0.4rem);
     box-shadow: 0px 0px var(--main-color);
   }
 }
