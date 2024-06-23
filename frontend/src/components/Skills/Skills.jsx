@@ -7,6 +7,11 @@ import Tailwind from '../Icons/Tailwind'
 import Wordpress from '../Icons/Wordpress'
 import Python from '../Icons/Python'
 import Firebase from '../Icons/Firebase'
+import Node from '../Icons/Node'
+import Java from '../Icons/Java'
+import MySql from '../Icons/MySql'
+import Mongodb from '../Icons/Mongodb'
+import SkillsIco from '../Icons/SkillsIco'
 
 const Skills = () => {
   const scrollers = document.querySelectorAll('.scroller')
@@ -41,74 +46,17 @@ const Skills = () => {
       </div>
       <div className="scroller">
         <ul className="tag-list scroller_inner">
-          <div>
-            <Python />
-          </div>
-          <div>
-            <Html />
-          </div>
-          <div>
-            <React />
-          </div>
-          <div>
-            <Css />
-          </div>
-          <div>
-            <Tailwind />
-          </div>
-          <div>
-            <Wordpress />
-          </div>
-          <div>
-            <Firebase />
-          </div>
-          <div>
-            <Wordpress />
-          </div>
+          <SkillsIco />
         </ul>
       </div>
       <div className="scroller" data-direction="right">
         <ul className="tag-list scroller_inner">
-          <div>
-            <Python />
-          </div>
-          <div>
-            <Html />
-          </div>
-          <div>
-            <React />
-          </div>
-          <div>
-            <Css />
-          </div>
-          <div>
-            <Tailwind />
-          </div>
-          <div>
-            <Wordpress />
-          </div>
+          <SkillsIco />
         </ul>
       </div>
       <div className="scroller">
         <ul className="tag-list scroller_inner">
-          <div>
-            <Python />
-          </div>
-          <div>
-            <Html />
-          </div>
-          <div>
-            <React />
-          </div>
-          <div>
-            <Css />
-          </div>
-          <div>
-            <Tailwind />
-          </div>
-          <div>
-            <Wordpress />
-          </div>
+          <SkillsIco />
         </ul>
       </div>
     </div>
