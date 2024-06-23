@@ -27,31 +27,50 @@ const Contact = () => {
 
   return (
     <>
-      <section className="contact" id='Contact'>
+      <section className="contact" id="Contact">
         <div className="container">
           <div className="contactTitle">
             <h1>Contact</h1>
           </div>
           <div className="contactForm">
             <form onSubmit={sendEmail} ref={Form}>
-              <div className="inputBox">
-                <input type="text" name="user_name" required />
+              <div className="inputBox ">
+                <input
+                  type="text"
+                  name="user_name"
+                  className="block block-focus"
+                  required
+                />
                 <span>Full Name</span>
               </div>
               <div className="inputBox">
-                <input type="email" name="user_email" required />
+                <input
+                  type="email"
+                  name="user_email"
+                  className="block block-focus"
+                  required
+                />
                 <span>Email</span>
               </div>
               <div className="inputBox">
-                <input type="text" name="subject" required />
+                <input
+                  type="text"
+                  name="subject"
+                  className="block block-focus"
+                  required
+                />
                 <span>Subject</span>
               </div>
               <div className="inputBox">
-                <textarea name="message" required></textarea>
+                <textarea
+                  name="message"
+                  className="block block-focus"
+                  required
+                ></textarea>
                 <span>Message</span>
               </div>
               <button type="submit" value="SEND">
-                <span className="button_top">
+                <span className="button_top ">
                   <div className="svg-wrapper-1">
                     <div className="svg-wrapper">
                       <svg

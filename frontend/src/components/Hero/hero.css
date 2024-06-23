@@ -1,4 +1,5 @@
 .section-container {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,19 +32,28 @@
   }
 
   .resumeButton {
-    --font-color: #323232;
-    --bg-color: #fff;
-    --main-color: #323232;
+    
     width: 120px;
     height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
+   
     font-size: 17px;
     font-weight: 600;
-    color: var(--font-color);
+    
     cursor: pointer;
+  }
+
+  .popover {
+    position: absolute;
+    z-index: 2;
+  }
+  .cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 
   .resumeButton:active {
@@ -51,14 +61,16 @@
     transform: translate(3px, 3px);
   }
 }
-
+.picker {
+  width: 250px;
+}
 .colorModeContainer {
   position: relative;
+  height: 60%;
+  
 }
 
 .theme {
-  --bg-color: #fff;
-  --main-color: #323232;
   position: absolute;
   top: 0;
   right: 0;
@@ -67,10 +79,7 @@
   align-items: center;
   width: 50px;
   height: 50px;
-  background-color: var(--bg-color);
-  border-radius: 100%;
-  border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
+  
 }
 .theme:active {
   box-shadow: 0px 0px var(--main-color);

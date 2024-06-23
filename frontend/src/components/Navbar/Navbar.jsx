@@ -60,9 +60,9 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="sidebar">
-      <nav className="links">
-        <a href="/" className="home-link" onClick={() => setShowNav(false)}>
+    <div className="sidebar ">
+      <nav className="links block">
+        <a href="/" className="home-link inBlock" onClick={() => setShowNav(false)}>
           <FontAwesomeIcon icon={faHome} />
         </a>
        

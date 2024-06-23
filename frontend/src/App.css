@@ -1,5 +1,5 @@
 :root {
-  --background-color: #fff;
+  --background-color: #004643;
   --clr: #0cae00;
   --btn-color: #0987f2;
   --btn-text-color: #fff;
@@ -7,16 +7,21 @@
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
+  --main-color: #85807a;
+  --secondary-color: #bbe2d7;
+  --border-color: #000000;
 }
 
 [data-theme='dark'] {
-  --background-color: #222;
+  --background-color: #004643;
   --btn-color: #fff;
   --btn-text-color: #222;
   --project-card-bg: #fff;
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
+  --main-color: #d3c6b2;
+  --border-color: #fff;
 }
 
 * {
@@ -81,4 +86,30 @@ p {
 
 .hover {
   cursor: pointer;
+}
+
+.block {
+  border-radius: 7px;
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px var(--main-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: 0.2s ease-in;
+}
+
+.block-active {
+  &:active {
+    box-shadow: 0px 0px var(--main-color);
+  }
+}
+.block-focus {
+  &:focus {
+    box-shadow: 0px 0px var(--main-color);
+  }
+}
+
+.inBlock {
+  &:active {
+    box-shadow: 0 0 var(--main-color);
+  }
 }

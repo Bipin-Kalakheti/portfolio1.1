@@ -4,7 +4,7 @@ import { faExpand } from '@fortawesome/free-solid-svg-icons'
 function ProjectCard({ src, link, projectTitle, projectDescription }) {
   return (
     <div className="main">
-      <div className="card">
+      <div className="card block block-active">
         
         <div className="card_content">
           <div className="card_image">

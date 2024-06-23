@@ -10,33 +10,40 @@ import linkedinDark from '../../assets/images/linkedin-dark.svg'
 import linkedinLight from '../../assets/images/linkedin-light.svg'
 import Resume from '../../assets/images/cv.pdf'
 import { useTheme } from '../../common/ThemeContext'
+import { SliderPicker } from 'react-color'
+import { useEffect, useState } from 'react'
 
-function Hero() {
+export default function Hero() {
   const { theme, toggleTheme } = useTheme()
+
+  const [color, setColor] = useState('#fff')
 
   const themeIcon = theme === 'light' ? sun : moon
   const twitterIcon = theme === 'light' ? twitterLight : twitterDark
   const githubIcon = theme === 'light' ? githubLight : githubDark
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark
-
+  useEffect(() => {
+    // Update the CSS variable whenever the color state changes
+    document.documentElement.style.setProperty('--background-color', color)
+  }, [color])
   return (
     <section id="hero" className="section-container">
-      <div className="colorModeContainer">
+      <div className="colorModeContainer block">
         <img
           src={heroImg}
           alt="Profile Picture of Bipin Kalakheti"
           className="heroImg"
         />
-        
-        
+
         <div className="theme">
-        <img
+          <img
             src={themeIcon}
             className="colorMode"
             alt="Color mode icon"
             onClick={toggleTheme}
           />
         </div>
+        
       </div>
       <div className="info">
         <h1>
@@ -60,17 +67,22 @@ function Hero() {
               <img src={linkedinIcon} alt="linkedin Icon" />
             </a>
           </span>
+          <span></span>
         </div>
         <p className="description">
           With a passion for developing modern web apps for commercial
           businesses.
         </p>
         <a href={Resume} download>
-          <button className="resumeButton">Resume</button>
+          <button className="resumeButton block block-active">Resume</button>
         </a>
       </div>
+      {/* <div className="picker">
+        <SliderPicker
+          color={color}
+          onChangeComplete={(color) => setColor(color.hex)}
+        />
+      </div> */}
     </section>
   )
 }
-
-export default Hero
