@@ -28,6 +28,9 @@ export default function Hero() {
   }, [color])
   return (
     <section id="hero" className="section-container">
+      <div className="email">
+        <a href="mailto:anbipin51@gmail.com" className="emailLink"> anbipin51@gmail.com </a>
+      </div>
       <div className="colorModeContainer fixblock">
         <img
           src={heroImg}
@@ -50,7 +53,23 @@ export default function Hero() {
           Kalakheti
         </h1>
         <h2>Frontend Developer</h2>
-        <div className="socialLinks">
+        
+        <p className="description">
+          With a passion for developing modern web apps for commercial
+          businesses.
+        </p>
+        <a href={Resume} download>
+          <button className="resumeButton block block-active">Resume</button>
+        </a>
+      </div>
+      {/* <div className="picker">
+        <SliderPicker
+          color={color}
+          onChangeComplete={(color) => setColor(color.hex)}
+        />
+      </div> */}
+
+<div className="socialLinks">
           <span>
             <a href="https://twitter.com" target="_blank">
               <img src={twitterIcon} alt="Twitter Icon" />
@@ -68,20 +87,6 @@ export default function Hero() {
           </span>
           <span></span>
         </div>
-        <p className="description">
-          With a passion for developing modern web apps for commercial
-          businesses.
-        </p>
-        <a href={Resume} download>
-          <button className="resumeButton block block-active">Resume</button>
-        </a>
-      </div>
-      {/* <div className="picker">
-        <SliderPicker
-          color={color}
-          onChangeComplete={(color) => setColor(color.hex)}
-        />
-      </div> */}
     </section>
   )
 }

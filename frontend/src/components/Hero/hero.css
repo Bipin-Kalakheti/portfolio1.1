@@ -106,11 +106,29 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.email{
+  rotate: 90deg;
+  top: 50%;
+  right: 0px;
+  position: fixed;
+  z-index: 100;
+
+  a{
+    color: var(--main-color);
+    text-decoration: none;
+  }
+}
 .socialLinks {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+
+  flex-direction: column;
+  
   gap: 30px;
+  top: 40%;
+  left:50px;
+  position: fixed;
+  
 }
 
 @media (width >= 800px) {
