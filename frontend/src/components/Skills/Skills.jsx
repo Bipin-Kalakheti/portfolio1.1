@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Html from '../Icons/Html'
 import './skills.css'
 import React from '../Icons/React'
@@ -14,12 +14,21 @@ import Mongodb from '../Icons/Mongodb'
 import SkillsIco from '../Icons/SkillsIco'
 
 const Skills = () => {
-  const scrollers = document.querySelectorAll('.scroller')
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    addAnimation()
-  }
+  const [contentLoaded, setContentLoaded] = useState(false)
+
+  useEffect(() => {
+    const scrollers = document.querySelectorAll('.scroller')
+    if (
+      scrollers.length > 0 &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      addAnimation()
+      setContentLoaded(true) // Indicate that content (and animations) are ready
+    }
+  }, [contentLoaded])
 
   function addAnimation() {
+    const scrollers = document.querySelectorAll('.scroller')
     console.log('addAnimation')
     scrollers.forEach((scroller) => {
       scroller.setAttribute('data-animated', true)
@@ -35,9 +44,6 @@ const Skills = () => {
     })
   }
 
-  useEffect(() => {
-    addAnimation()
-  }, [])
 
   return (
     <div className="skills" id="Skills">
