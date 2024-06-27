@@ -8,9 +8,10 @@
   min-height: 500px;
 
   .heroImg {
-    max-width: 200px;
+    max-width: 300px;
     transition-delay: 0.4s;
     transition: 0.2s ease-in-out;
+    object-fit: contain;
     &:hover {
       transform: scale(1.02);
       filter: drop-shadow(2px 2px 20px #1818188a);
@@ -70,7 +71,9 @@
 }
 .colorModeContainer {
   position: relative;
-  height: 60%;
+  width: 20%;
+  aspect-ratio: 6/9;
+  overflow: hidden;
 }
 
 .theme {
