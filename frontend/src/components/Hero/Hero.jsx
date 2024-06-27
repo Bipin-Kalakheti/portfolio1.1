@@ -10,7 +10,6 @@ import linkedinDark from '../../assets/images/linkedin-dark.svg'
 import linkedinLight from '../../assets/images/linkedin-light.svg'
 import Resume from '../../assets/images/cv.pdf'
 import { useTheme } from '../../common/ThemeContext'
-import { SliderPicker } from 'react-color'
 import { useEffect, useState } from 'react'
 
 export default function Hero() {
