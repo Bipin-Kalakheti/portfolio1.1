@@ -1,17 +1,8 @@
 import { useEffect, useState } from 'react'
 import Html from '../Icons/Html'
 import './skills.css'
-import React from '../Icons/React'
-import Css from '../Icons/Css'
-import Tailwind from '../Icons/Tailwind'
-import Wordpress from '../Icons/Wordpress'
-import Python from '../Icons/Python'
-import Firebase from '../Icons/Firebase'
-import Node from '../Icons/Node'
-import Java from '../Icons/Java'
-import MySql from '../Icons/MySql'
-import Mongodb from '../Icons/Mongodb'
 import SkillsIco from '../Icons/SkillsIco'
+import { useRef } from 'react'
 
 const Skills = () => {
   const [contentLoaded, setContentLoaded] = useState(false)
@@ -40,9 +31,13 @@ const Skills = () => {
         const duplicatedItem = item.cloneNode(true)
         duplicatedItem.setAttribute('aria-hidden', true)
         scrollerInner.appendChild(duplicatedItem)
+        console.log('Animating item:', item) // Check if items are selected and duplicated
+        console.log("Yes we're animating")
       })
     })
   }
+
+  const scrollersRef = useRef(null)
 
 
   return (

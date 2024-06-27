@@ -1,6 +1,6 @@
 import './projects.css'
 import ProjectCard from '../../common/ProjectCard'
-import ChatApp from '../../assets/images/fitlift.png'
+import ChatApp from '../../assets/images/ch'
 
 function Projects() {
   return (

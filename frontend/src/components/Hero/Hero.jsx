@@ -10,7 +10,6 @@ import linkedinDark from '../../assets/images/linkedin-dark.svg'
 import linkedinLight from '../../assets/images/linkedin-light.svg'
 import Resume from '../../assets/images/cv.pdf'
 import { useTheme } from '../../common/ThemeContext'
-import { SliderPicker } from 'react-color'
 import { useEffect, useState } from 'react'
 
 export default function Hero() {
@@ -29,7 +28,9 @@ export default function Hero() {
   return (
     <section id="hero" className="section-container">
       <div className="email">
-        <a href="mailto:anbipin51@gmail.com" className="emailLink"> anbipin51@gmail.com </a>
+        <a href="mailto:anbipin51@gmail.com" className="emailLink">
+          anbipin51@gmail.com
+        </a>
       </div>
       <div className="colorModeContainer fixblock">
         <img
@@ -53,7 +54,7 @@ export default function Hero() {
           Kalakheti
         </h1>
         <h2>Frontend Developer</h2>
-        
+
         <p className="description">
           With a passion for developing modern web apps for commercial
           businesses.
@@ -69,24 +70,24 @@ export default function Hero() {
         />
       </div> */}
 
-<div className="socialLinks">
-          <span>
-            <a href="https://twitter.com" target="_blank">
-              <img src={twitterIcon} alt="Twitter Icon" />
-            </a>
-          </span>
-          <span>
-            <a href="https://github.com" target="_blank">
-              <img src={githubIcon} alt="github Icon" />
-            </a>
-          </span>
-          <span>
-            <a href="https://linkedin.com" target="_blank">
-              <img src={linkedinIcon} alt="linkedin Icon" />
-            </a>
-          </span>
-          <span></span>
-        </div>
+      <div className="socialLinks ">
+        <span>
+          <a href="https://twitter.com" target="_blank">
+            <img src={twitterIcon} alt="Twitter Icon" />
+          </a>
+        </span>
+        <span>
+          <a href="https://github.com" target="_blank">
+            <img src={githubIcon} alt="github Icon" />
+          </a>
+        </span>
+        <span>
+          <a href="https://linkedin.com" target="_blank">
+            <img src={linkedinIcon} alt="linkedin Icon" />
+          </a>
+        </span>
+        <span></span>
+      </div>
     </section>
   )
 }
