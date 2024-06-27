@@ -1,6 +1,6 @@
 import './projects.css'
 import ProjectCard from '../../common/ProjectCard'
-import ChatApp from '../../assets/images/ch'
+import ChatApp from '../../assets/images/viberr.png'
 
 function Projects() {
   return (

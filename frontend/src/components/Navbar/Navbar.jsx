@@ -25,9 +25,20 @@ const Sidebar = () => {
     }
   }
 
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.links'); // Adjust the selector as needed
+    if (window.scrollY > 0) { // Change 0 to another value if you want some delay
+      navbar.classList.remove('navbar-invisible');
+      navbar.classList.add('navbar-visible');
+    } else {
+      navbar.classList.add('navbar-invisible');
+      navbar.classList.remove('navbar-visible');
+    }
+  });
+
   return (
     <div className="sidebar ">
-      <nav className="links block">
+      <nav className="links ">
         <a
           href="/"
           className="home-link inBlock"
