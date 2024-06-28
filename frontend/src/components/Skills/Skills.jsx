@@ -3,6 +3,7 @@ import Html from '../Icons/Html'
 import './skills.css'
 import SkillsIco from '../Icons/SkillsIco'
 import { useRef } from 'react'
+import AnimatedLetters from '../AnimatedLetters/AnimatedLetters'
 
 const Skills = () => {
   const [contentLoaded, setContentLoaded] = useState(false)
@@ -39,11 +40,27 @@ const Skills = () => {
 
   const scrollersRef = useRef(null)
 
+  const [letterClass, setLetterClass] = useState('text-animate')
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLetterClass('text-animate-hover')
+    }, 20)
+
+    // Return a cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <div className="skills" id="Skills">
-      <div className="titleSection">
-        <h1>Skills</h1>
+      <div className="sectionTitle">
+        <h1 className="sectionTitle">
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={['S', 'k', 'i', 'l', 'l', 's']}
+            idx={15}
+          />
+        </h1>
       </div>
       <div className="scroller">
         <ul className="tag-list scroller_inner">

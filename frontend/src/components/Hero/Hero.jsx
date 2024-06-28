@@ -11,6 +11,7 @@ import linkedinLight from '../../assets/images/linkedin-light.svg'
 import Resume from '../../assets/images/cv.pdf'
 import { useTheme } from '../../common/ThemeContext'
 import { useEffect, useState } from 'react'
+import AnimatedLetters from '../AnimatedLetters/AnimatedLetters'
 
 export default function Hero() {
   const { theme, toggleTheme } = useTheme()
@@ -25,6 +26,34 @@ export default function Hero() {
     // Update the CSS variable whenever the color state changes
     document.documentElement.style.setProperty('--background-color', color)
   }, [color])
+
+  const [letterClass, setLetterClass] = useState('text-animate-hover')
+  const nameArray = ['', 'B', 'i', 'p', 'i', 'n']
+  const jobArray = [
+    'w',
+    'e',
+    'b',
+    ' ',
+    'd',
+    'e',
+    'v',
+    'e',
+    'l',
+    'o',
+    'p',
+    'e',
+    'r',
+    '.',
+  ]
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLetterClass('text-animate-hover')
+    }, 10)
+
+    // Return a cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <section id="hero" className="section-container">
       <div className="email">
@@ -49,19 +78,39 @@ export default function Hero() {
         </div>
       </div>
       <div className="info">
-        <h1>
-          Bipin <br />
-          Kalakheti
-        </h1>
-        <h2>Frontend Developer</h2>
+        <div className="text-zone sectionTitle">
+          <h1 className='sectionTitle'> 
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={['H', 'i', ',']}
+              idx={3}
+            />
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={['I', "'", 'm']}
+              idx={3}
+            />
 
-        <p className="description">
-          With a passion for developing modern web apps for commercial
-          businesses.
-        </p>
-        <a href={Resume} download>
-          <button className="resumeButton block block-active">Resume</button>
-        </a>
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={15}
+            />
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={jobArray}
+              idx={22}
+            />
+          </h1>
+          <h2> Frontend Developer / Python Developer / Gamer</h2>
+        </div>
+        <div>
+          <a href={Resume} download>
+            <button className="resumeButton block block-active">Resume</button>
+          </a>
+        </div>
       </div>
       {/* <div className="picker">
         <SliderPicker

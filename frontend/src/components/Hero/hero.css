@@ -19,10 +19,7 @@
   }
 
   span {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-
+    
     a {
       margin: 0;
 
@@ -110,14 +107,14 @@
   gap: 20px;
 }
 
-.email{
+.email {
   rotate: 90deg;
   top: 50%;
   right: 0px;
   position: fixed;
   z-index: 100;
 
-  a{
+  a {
     color: var(--main-color);
     text-decoration: none;
   }
@@ -126,12 +123,11 @@
   display: flex;
 
   flex-direction: column;
-  
+
   gap: 30px;
   top: 40%;
-  left:50px;
+  left: 50px;
   position: fixed;
-  
 }
 
 @media (width >= 800px) {

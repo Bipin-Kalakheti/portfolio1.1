@@ -1,6 +1,8 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import './contact.css'
+import { useState } from 'react'
+import AnimatedLetters from '../AnimatedLetters/AnimatedLetters'
 
 const Contact = () => {
   const Form = useRef()
@@ -25,12 +27,29 @@ const Contact = () => {
       )
   }
 
+  const [letterClass, setLetterClass] = useState('text-animate')
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLetterClass('text-animate-hover')
+    }, 20)
+
+    // Return a cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
       <section className="contact" id="Contact">
         <div className="container">
-          <div className="contactTitle">
-            <h1>Contact</h1>
+          <div className="contactTitle sectionTitle">
+            <h1 className="sectionTitle">
+              <AnimatedLetters
+                letterClass={letterClass}
+                strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+                idx={15}
+              />
+            </h1>
           </div>
           <div className="contactForm">
             <form onSubmit={sendEmail} ref={Form}>
