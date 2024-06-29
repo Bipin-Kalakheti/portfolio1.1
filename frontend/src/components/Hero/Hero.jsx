@@ -27,7 +27,7 @@ export default function Hero() {
     document.documentElement.style.setProperty('--background-color', color)
   }, [color])
 
-  const [letterClass, setLetterClass] = useState('text-animate-hover')
+  const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = ['', 'B', 'i', 'p', 'i', 'n']
   const jobArray = [
     'w',
@@ -49,7 +49,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 10)
+    }, 2000)
 
     // Return a cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer)
@@ -79,7 +79,7 @@ export default function Hero() {
       </div>
       <div className="info">
         <div className="text-zone sectionTitle">
-          <h1 className='sectionTitle'> 
+          <h1 className="sectionTitle">
             <AnimatedLetters
               letterClass={letterClass}
               strArray={['H', 'i', ',']}

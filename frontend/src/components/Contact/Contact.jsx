@@ -32,7 +32,7 @@ const Contact = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 20)
+    }, 3000)
 
     // Return a cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer)
@@ -43,7 +43,7 @@ const Contact = () => {
       <section className="contact" id="Contact">
         <div className="container">
           <div className="contactTitle sectionTitle">
-            <h1 className="sectionTitle">
+            <h1 className="sectionTitle scroll-animate">
               <AnimatedLetters
                 letterClass={letterClass}
                 strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
@@ -53,7 +53,7 @@ const Contact = () => {
           </div>
           <div className="contactForm">
             <form onSubmit={sendEmail} ref={Form}>
-              <div className="inputBox ">
+              <div className="inputBox left-scrollAnimate">
                 <input
                   type="text"
                   name="user_name"
@@ -62,7 +62,7 @@ const Contact = () => {
                 />
                 <span>Full Name</span>
               </div>
-              <div className="inputBox">
+              <div className="inputBox right-scrollAnimate ">
                 <input
                   type="email"
                   name="user_email"
@@ -71,7 +71,7 @@ const Contact = () => {
                 />
                 <span>Email</span>
               </div>
-              <div className="inputBox">
+              <div className="inputBox left-scrollAnimate">
                 <input
                   type="text"
                   name="subject"
@@ -80,7 +80,7 @@ const Contact = () => {
                 />
                 <span>Subject</span>
               </div>
-              <div className="inputBox">
+              <div className="inputBox right-scrollAnimate ">
                 <textarea
                   name="message"
                   className="block block-focus"

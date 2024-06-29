@@ -47,7 +47,6 @@
   gap: 1rem;
 
   svg {
-    
     fill: gray !important;
     stroke: #000000;
   }
@@ -56,5 +55,36 @@
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.left-scrollAnimate {
+  animation: leftRight both ease-in-out;
+  animation-timeline: view(70% 20%);
+}
+.right-scrollAnimate {
+  animation: rightLeft both ease-in-out;
+  animation-timeline: view(60% 20%);
+}
+
+@keyframes leftRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

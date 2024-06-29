@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 80px;
   margin-top: 50px;
+  
 }
 
 .card {
@@ -17,21 +18,41 @@
   align-items: center;
   transition: 0.3s;
 
-  &:hover {
-    transform: scale(1.02);
+  .card-link{
+    a{
+      text-decoration: none;
+    }
   }
 
-  .card-image{
+  &:hover {
+    transform: scale(1.02);
+
+    .card-link{
+
+      a{
+        background-image: linear-gradient(#33333300, #33333300), linear-gradient(to right, var(--clr-primary-300), var(--clr-primary-400));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: .3s ease;
+    transition-property: background-size, color, background-color, border-color;
+}
+      }
+    }
+  }
+
+  .card-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
 }
+

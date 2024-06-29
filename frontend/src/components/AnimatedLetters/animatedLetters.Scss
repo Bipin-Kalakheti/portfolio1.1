@@ -1,3 +1,5 @@
+@import 'animate.css';
+
 .text-animate {
   display: inline-block;
   opacity: 0;
@@ -55,5 +57,13 @@
 
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

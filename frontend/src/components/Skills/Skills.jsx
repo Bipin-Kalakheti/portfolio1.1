@@ -45,7 +45,7 @@ const Skills = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 20)
+    }, 3000)
 
     // Return a cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer)
@@ -62,17 +62,17 @@ const Skills = () => {
           />
         </h1>
       </div>
-      <div className="scroller">
-        <ul className="tag-list scroller_inner">
+      <div className="scroller left-scrollAnimate">
+        <ul className="tag-list scroller_inner ">
           <SkillsIco />
         </ul>
       </div>
-      <div className="scroller" data-direction="right">
-        <ul className="tag-list scroller_inner">
+      <div className="scroller right-scrollAnimate" data-direction="right">
+        <ul className="tag-list scroller_inner ">
           <SkillsIco />
         </ul>
       </div>
-      <div className="scroller">
+      <div className="scroller left-scrollAnimate">
         <ul className="tag-list scroller_inner">
           <SkillsIco />
         </ul>
