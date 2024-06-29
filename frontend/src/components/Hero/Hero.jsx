@@ -49,7 +49,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 2000)
+    }, 4100)
 
     // Return a cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer)
@@ -120,7 +120,7 @@ export default function Hero() {
       </div> */}
 
       <div className="socialLinks ">
-        <span>
+        <span >
           <a href="https://twitter.com" target="_blank">
             <img src={twitterIcon} alt="Twitter Icon" />
           </a>
@@ -135,7 +135,7 @@ export default function Hero() {
             <img src={linkedinIcon} alt="linkedin Icon" />
           </a>
         </span>
-        <span></span>
+        
       </div>
     </section>
   )

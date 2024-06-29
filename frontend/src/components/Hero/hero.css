@@ -19,7 +19,6 @@
   }
 
   span {
-    
     a {
       margin: 0;
 
@@ -128,6 +127,26 @@
   top: 40%;
   left: 50px;
   position: fixed;
+
+  span {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    &:active {
+      box-shadow: 0px 0px var(--main-color);
+      transform: translate(3px, 3px);
+    }
+  }
 }
 
 @media (width >= 800px) {
