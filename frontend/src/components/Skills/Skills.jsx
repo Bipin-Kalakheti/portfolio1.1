@@ -52,7 +52,7 @@ const Skills = () => {
   }, [])
 
   return (
-    <div className="skills" id="Skills">
+    <div className="skills container" id="Skills">
       <div className="sectionTitle">
         <h1 className="sectionTitle">
           <AnimatedLetters
